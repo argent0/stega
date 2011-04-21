@@ -1,70 +1,70 @@
 STEGA
 
-	Is a steganography set of tools that embeds a file into the LSB's of another.
+   Is a steganography set of tools that embeds a file into the LSB's of another.
 
 PROGRAMS DESCRIPTION
 
-	hide							:	Embeds a file into another regardless of the format.
-	recover						:	Recovers data embedded within a file regardless of 
-										format.
-	png_extractor				:	Extracts raw pixels and other useful information 
-										from PNG images.
-	png_restorer				:	Creates a PNG image using raw pixels and a reference image.	
-	hide_into_image.sh		:	Example script using the tools to embed information
-										into a PNG file.
-	recover_data_from_image	:	Example script using the tools to recover
-										information embedded into a PNG file.
+   hide                    :  Embeds a file into another regardless of the format.
+   recover                 :  Recovers data embedded within a file regardless of 
+                              format.
+   png_extractor           :  Extracts raw pixels and other useful information 
+                              from PNG images.
+   png_restorer            :  Creates a PNG image using raw pixels and a reference image. 
+   hide_into_image.sh      :  Example script using the tools to embed information
+                              into a PNG file.
+   recover_data_from_image :  Example script using the tools to recover
+                              information embedded into a PNG file.
 
 USAGE
 
-hide										<file to hide> <file where to hide> 
-											<resulting output file>
-recover									<file_where_information_is_hidden> <information_length> 
-											<resulting output file>
-png_restorer							<reference PNG> <raw file> <output file>
-png_extractor							<PNG file>
-sbin/hide_into_image.sh				<data to hide> <image to use> <output image>
-sbin/recover_data_from_image.sh	<image where data is hidden> <size of the hidden data> 
-											<output file>
+hide                             <file to hide> <file where to hide> 
+                                 <resulting output file>
+recover                          <file_where_information_is_hidden> <information_length> 
+                                 <resulting output file>
+png_restorer                     <reference PNG> <raw file> <output file>
+png_extractor                    <PNG file>
+sbin/hide_into_image.sh          <data to hide> <image to use> <output image>
+sbin/recover_data_from_image.sh  <image where data is hidden> <size of the hidden data> 
+                                 <output file>
 
 EXAMPLES
 
-	Embed data from stdin:
+   Embed data from stdin:
 
-	steganography $echo "Secret" | sh sbin/hide_into_image.sh - images/black.png
-	lab/rig.png
-	Decompressing png...
-	Image Info:
-	Width :100
-	Height :100
-	Bit depth:8
-	Channels :1
-	Creating info file
-	Creating end file
-	Creating raw file
-	Releasing memory
-	Hiding the information...
-	Input file size = 7
-	Hideout file size = 10000
-	Re-compressing
-	Terminating normally.
+   steganography $echo "Secret" | sh sbin/hide_into_image.sh - images/black.png
+   lab/rig.png
+   Decompressing png...
+   Image Info:
+   Width :100
+   Height :100
+   Bit depth:8
+   Channels :1
+   Creating info file
+   Creating end file
+   Creating raw file
+   Releasing memory
+   Hiding the information...
+   Input file size = 7
+   Hideout file size = 10000
+   Re-compressing
+   Terminating normally.
 
-	Recover data to stdout:
+   Recover data to stdout:
 
-	steganography $sh sbin/recover_data_from_image.sh lab/rig.png 7 
-	Using Stdout
-	Decompressing png...
-	Image Info:
-	Width :100
-	Height :100
-	Bit depth:8
-	Channels :1
-	Creating info file
-	Creating end file
-	Creating raw file
-	Releasing memory
-	Recovering The Data...
-	hideoutSize=10000
-	len=7
-	Secret					<<--- THIS IS THE RECOVERED DATA
-	Terminating normally.
+   steganography $sh sbin/recover_data_from_image.sh lab/rig.png 7 
+   Using Stdout
+   Decompressing png...
+   Image Info:
+   Width :100
+   Height :100
+   Bit depth:8
+   Channels :1
+   Creating info file
+   Creating end file
+   Creating raw file
+   Releasing memory
+   Recovering The Data...
+   hideoutSize=10000
+   len=7
+   Secret               <<--- THIS IS THE RECOVERED DATA
+   Terminating normally.
