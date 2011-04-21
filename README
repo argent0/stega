@@ -5,9 +5,10 @@ STEGA
 PROGRAMS DESCRIPTION
 
 	hide							:	Embeds a file into another regardless of the format.
-	recover						:	Recovers data embedded within a file regardless of format.
-	png_extractor				:	Extracts raw pixels and other useful information from PNG
-										images.
+	recover						:	Recovers data embedded within a file regardless of 
+										format.
+	png_extractor				:	Extracts raw pixels and other useful information 
+										from PNG images.
 	png_restorer				:	Creates a PNG image using raw pixels and a reference image.	
 	hide_into_image.sh		:	Example script using the tools to embed information
 										into a PNG file.
@@ -16,12 +17,15 @@ PROGRAMS DESCRIPTION
 
 USAGE
 
-hide										<file to hide> <file where to hide> <resulting output file>
-recover									<file_where_information_is_hidden> <information_length> <resulting output file>
+hide										<file to hide> <file where to hide> 
+											<resulting output file>
+recover									<file_where_information_is_hidden> <information_length> 
+											<resulting output file>
 png_restorer							<reference PNG> <raw file> <output file>
 png_extractor							<PNG file>
 sbin/hide_into_image.sh				<data to hide> <image to use> <output image>
-sbin/recover_data_from_image.sh	<image where data is hidden> <size of the hidden data> <output file>
+sbin/recover_data_from_image.sh	<image where data is hidden> <size of the hidden data> 
+											<output file>
 
 EXAMPLES
 
